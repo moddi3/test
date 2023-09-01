@@ -3,11 +3,13 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx serve",
+    "start": "nx run contstructor-with-isr:serve:dev",
     "start:ssr": "nx serve-ssr",
     "server": "nx server",
     "build-dev": "nx build",
-    "vercel-build": "npm run build:ssr",
+    "build:ssr": "nx build && nx server",
+    "vercel-build": "yarn build:ssr",
+    "prerender": "nx prerender",
     "test": "nx test"
   },
   "private": true,
