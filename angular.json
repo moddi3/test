@@ -1,5 +1,5 @@
 {
-  "name": "contstructor-with-isr",
+  "projectName": "contstructor-with-isr",
   "$schema": "node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "app",
