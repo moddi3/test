@@ -1,6 +1,0 @@
-[build]
-  command = "ng build --configuration production && ng run contstructor-with-isr:serverless:production"
-  publish = "dist/contstructor-with-isr/browser"
-
-[[plugins]]
-  package = "@netlify/plugin-angular-universal"
