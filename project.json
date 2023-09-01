@@ -10,7 +10,7 @@
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/contstructor-with-isr",
+        "outputPath": "dist/contstructor-with-isr/browser",
         "index": "./src/index.html",
         "main": "./src/main.ts",
         "polyfills": ["zone.js"],
@@ -84,6 +84,59 @@
           "codeCoverage": true
         }
       }
+    },
+    "server": {
+      "dependsOn": ["build"],
+      "executor": "@angular-devkit/build-angular:server",
+      "options": {
+        "outputPath": "dist/contstructor-with-isr/server",
+        "main": "server.ts",
+        "tsConfig": "tsconfig.server.json"
+      },
+      "configurations": {
+        "production": {
+          "outputHashing": "media"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "sourceMap": true,
+          "extractLicenses": false,
+          "vendorChunk": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve-ssr": {
+      "executor": "@nguniversal/builders:ssr-dev-server",
+      "configurations": {
+        "development": {
+          "browserTarget": "contstructor-with-isr:build:development",
+          "serverTarget": "contstructor-with-isr:server:development"
+        },
+        "production": {
+          "browserTarget": "contstructor-with-isr:build:production",
+          "serverTarget": "contstructor-with-isr:server:production"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "prerender": {
+      "executor": "@nguniversal/builders:prerender",
+      "options": {
+        "routes": ["/"]
+      },
+      "configurations": {
+        "development": {
+          "browserTarget": "contstructor-with-isr:build:development",
+          "serverTarget": "contstructor-with-isr:server:development"
+        },
+        "production": {
+          "browserTarget": "contstructor-with-isr:build:production",
+          "serverTarget": "contstructor-with-isr:server:production"
+        }
+      },
+      "defaultConfiguration": "production"
     }
   }
 }

@@ -1,0 +1,12 @@
+<p>example2 works!</p>
+
+{{ catImage() }}
+    <br>
+<!-- <img *ngIf="catImage()" src="{{catImage()}}" width="800" height="400" style="object-fit: contain;"> -->
+<span>{{ time() | date : 'medium' }} </span>
+<br>
+<button
+  (click)="invalidate()"
+>
+  Invalidate
+</button>
