@@ -1,6 +1,7 @@
 {
   "name": "contstructor-with-isr",
   "$schema": "node_modules/nx/schemas/project-schema.json",
+  "defaultProject": "contstructor-with-isr",
   "projectType": "application",
   "prefix": "app",
   "sourceRoot": "./src",
