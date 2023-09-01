@@ -6,7 +6,8 @@
     "start": "nx serve",
     "start:ssr": "nx serve-ssr",
     "server": "nx server",
-    "build": "nx build",
+    "build-dev": "nx build",
+    "vercel-build": "npm run build:ssr",
     "test": "nx test"
   },
   "private": true,
