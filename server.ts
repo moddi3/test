@@ -18,25 +18,14 @@ export function app(): express.Express {
     : 'index';
 
 
-  //  const INVALIDATE_TOKEN = process.env['INVALIDATE_TOKEN'] || '';
-
-  //  Step 0 (optional): Create FileSystemCacheHandler with required options.
-  //  const fsCacheHandler = new FileSystemCacheHandler({
-
-  //    cacheFolderPath: join(distFolder, '/cache'),
-  //    prerenderedPagesPath: distFolder,
-  //    addPrerenderedPagesToCache: true,
-  //  });
-
-
-  // const REDIS_CONNECTION_STRING =
-  //   'redis://default:0cfbecce38c7400c973e2056e805562b@sterling-tomcat-33150.upstash.io:33150';
-  // const redisCacheHandler = REDIS_CONNECTION_STRING
-  //   ? new RedisCacheHandler({ connectionString: REDIS_CONNECTION_STRING, })
-  //   : undefined;
+  const REDIS_CONNECTION_STRING =
+    'redis://default:83d91ff56c3f42f5a2a2205bf7f52005@adjusted-pipefish-33160.upstash.io:33160';
+  const redisCacheHandler = REDIS_CONNECTION_STRING
+    ? new RedisCacheHandler({ connectionString: REDIS_CONNECTION_STRING, })
+    : undefined;
 
   const isr = new ISRHandler({
-    // cache:fsCacheHandler
+    cache: redisCacheHandler,
     indexHtml,
     invalidateSecretToken: '123', // replace with env secret key ex. process.env.REVALIDATE_SECRET_TOKEN
     enableLogging: true,
@@ -88,21 +77,13 @@ export function app(): express.Express {
     // Server side render the page and add to cache if needed
     async (req, res, next) =>
       {
-        console.log('HOST', req.get('host'))
-        console.log('HOSTNAME', req.hostname)
-        console.log('URL', req.originalUrl)
+        console.log('HOST', req.get('host'));
+        console.log('HOSTNAME', req.hostname);
+        console.log('URL', req.originalUrl);
 
-        // if (
-        //   req.get('host') === '570c-188-163-20-2.ngrok-free.app'
-        // ) {
-        // console.log('setting prefix', req.get('host'));
-
-          // RedisCacheHandler.prefix = req.get('host')!;
-          return await isr.render(req, res, next);
-        // }
-        console.log('default cache')
+        console.log('default cache');
+        RedisCacheHandler.prefix = req.hostname + req.originalUrl;
         return await isr.render(req, res, next, {
-
           modifyGeneratedHtml: (req, html) => {
             return `${html}<!-- Hello, I'm modifying the generatedHtml before caching it! -->`;
           },

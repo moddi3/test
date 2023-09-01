@@ -19,9 +19,7 @@ export class RedisCacheHandler extends CacheHandler {
   constructor(private readonly options: RedisCacheHandlerOptions) {
     super();
 
-    this.redis = new Redis(
-      'redis://default:83d91ff56c3f42f5a2a2205bf7f52005@adjusted-pipefish-33160.upstash.io:33160'
-    );
+    this.redis = new Redis(this.options.connectionString);
     console.log('RedisCacheHandler initialized 🚀');
   }
 

@@ -53,7 +53,7 @@ export class ExampleComponent implements OnInit {
     this.http
       .post('/api/invalidate', {
         token: '123',
-        urlsToInvalidate: ['/example'],
+        urlsToInvalidate: [location.pathname],
       })
       .subscribe((res) => {
         console.log('invalidate', res);
