@@ -8,7 +8,7 @@
     "server": "nx server",
     "build-dev": "nx build",
     "build:ssr": "nx build && nx server",
-    "vercel-build": "yarn build:ssr",
+    "vercel-build": "pnpm run build:ssr",
     "prerender": "nx prerender",
     "test": "nx test"
   },
@@ -55,8 +55,9 @@
     "@nx/linter": "16.7.4",
     "@nx/workspace": "16.7.4",
     "@schematics/angular": "~16.2.0",
+    "@types/express": "^4.17.21",
     "@types/jest": "^29.4.0",
-    "@types/node": "^14.18.56",
+    "@types/node": "^14.18.63",
     "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@typescript-eslint/parser": "^5.60.1",
     "eslint": "~8.46.0",
@@ -69,6 +70,5 @@
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
     "typescript": "^4.9.5"
-  },
-  "packageManager": "yarn@4.0.2"
+  }
 }
