@@ -19,7 +19,7 @@ export function app(): express.Express {
 
 
   const REDIS_CONNECTION_STRING =
-    'redis://default:83d91ff56c3f42f5a2a2205bf7f52005@adjusted-pipefish-33160.upstash.io:33160';
+    'redis://default:d3f78605c76a4d3aaf7cdd1b0b494b44@eu2-pro-elf-32120.upstash.io:32120';
   const redisCacheHandler = REDIS_CONNECTION_STRING
     ? new RedisCacheHandler({ connectionString: REDIS_CONNECTION_STRING, })
     : undefined;
