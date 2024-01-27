@@ -44,16 +44,13 @@ Thumbs.db
 .netlify
 
 
-# yarn
-/.yarn/*
+.yarn/*
+!.yarn/cache
 !.yarn/patches
-!.yarn/releases
 !.yarn/plugins
+!.yarn/releases
 !.yarn/sdks
 !.yarn/versions
-.pnp.*
-yarn-error.log
-.angular
 
 #nx
 .nx/cache
