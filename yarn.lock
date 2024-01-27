@@ -3654,6 +3654,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@rx-angular/isr@npm:16.0.0":
+  version: 16.0.0
+  resolution: "@rx-angular/isr@npm:16.0.0"
+  dependencies:
+    tslib: "npm:^2.3.0"
+  peerDependencies:
+    "@angular/common": ">=15.0.0 || >=16.0.0"
+    "@angular/core": ">=15.0.0 || >=16.0.0"
+    "@types/node": ^14.15.0 || ^16.0.0 || ^18.0.0
+    express: ^4.15.2
+  checksum: cf2b8d17d7ce73f5bd07cec49a0c70f26f8701f22582dff39f67d8ded9986ddaea8618f986f55218e001d5e52df7f23912db818d0890e11ea357730247dd3037
+  languageName: node
+  linkType: hard
+
 "@schematics/angular@npm:16.2.12, @schematics/angular@npm:~16.2.0":
   version: 16.2.12
   resolution: "@schematics/angular@npm:16.2.12"
@@ -3752,18 +3766,6 @@ __metadata:
   version: 0.2.0
   resolution: "@trysound/sax@npm:0.2.0"
   checksum: 44907308549ce775a41c38a815f747009ac45929a45d642b836aa6b0a536e4978d30b8d7d680bbd116e9dd73b7dbe2ef0d1369dcfc2d09e83ba381e485ecbe12
-  languageName: node
-  linkType: hard
-
-"@ts-morph/common@npm:~0.9.0":
-  version: 0.9.2
-  resolution: "@ts-morph/common@npm:0.9.2"
-  dependencies:
-    fast-glob: "npm:^3.2.5"
-    minimatch: "npm:^3.0.4"
-    mkdirp: "npm:^1.0.4"
-    path-browserify: "npm:^1.0.1"
-  checksum: ec1c41e055d07c5df9fdbac12b3f7f6f4956cf2e04c62672a54eaea21b47716d3e157bf07a4b9211164a12d2dc72f5403aeae1a6676a4566f4a78f0f673a3ef5
   languageName: node
   linkType: hard
 
@@ -4054,13 +4056,6 @@ __metadata:
   version: 1.3.5
   resolution: "@types/mime@npm:1.3.5"
   checksum: c2ee31cd9b993804df33a694d5aa3fa536511a49f2e06eeab0b484fef59b4483777dbb9e42a4198a0809ffbf698081fdbca1e5c2218b82b91603dfab10a10fbc
-  languageName: node
-  linkType: hard
-
-"@types/minimatch@npm:^3.0.3":
-  version: 3.0.5
-  resolution: "@types/minimatch@npm:3.0.5"
-  checksum: a1a19ba342d6f39b569510f621ae4bbe972dc9378d15e9a5e47904c440ee60744f5b09225bc73be1c6490e3a9c938eee69eb53debf55ce1f15761201aa965f97
   languageName: node
   linkType: hard
 
@@ -4972,13 +4967,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"array-differ@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "array-differ@npm:3.0.0"
-  checksum: c0d924cc2b7e3f5a0e6ae932e8941c5fddc0412bcecf8d5152641910e60f5e1c1e87da2b32083dec2f92f9a8f78e916ea68c22a0579794ba49886951ae783123
-  languageName: node
-  linkType: hard
-
 "array-flatten@npm:1.1.1":
   version: 1.1.1
   resolution: "array-flatten@npm:1.1.1"
@@ -4997,13 +4985,6 @@ __metadata:
   version: 3.0.1
   resolution: "array-union@npm:3.0.1"
   checksum: b5271d7e5688d2d1932928b271796dbbddc422448557ab05ef6f34a9f84fb645eb855384feec6234bf59c226053a0e21b8a00b0e6cd588874b90a5c13dbeb64e
-  languageName: node
-  linkType: hard
-
-"arrify@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "arrify@npm:2.0.1"
-  checksum: 3fb30b5e7c37abea1907a60b28a554d2f0fc088757ca9bf5b684786e583fdf14360721eb12575c1ce6f995282eab936712d3c4389122682eafab0e0b57f78dbb
   languageName: node
   linkType: hard
 
@@ -5847,13 +5828,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"code-block-writer@npm:^10.1.1":
-  version: 10.1.1
-  resolution: "code-block-writer@npm:10.1.1"
-  checksum: 8573816797ac20256b22d0c9c72743f6dcbcef2cb7e08e7761b3f7a3f2cdd3abe1c66ed9dda123f7c1e5e3746a5528fe3c09473758f1d1555fe4c69add334b28
-  languageName: node
-  linkType: hard
-
 "collect-v8-coverage@npm:^1.0.0":
   version: 1.0.2
   resolution: "collect-v8-coverage@npm:1.0.2"
@@ -6071,6 +6045,7 @@ __metadata:
     "@nx/js": "npm:16.7.4"
     "@nx/linter": "npm:16.7.4"
     "@nx/workspace": "npm:16.7.4"
+    "@rx-angular/isr": "npm:16.0.0"
     "@schematics/angular": "npm:~16.2.0"
     "@types/jest": "npm:^29.4.0"
     "@types/node": "npm:^14.18.56"
@@ -6086,7 +6061,6 @@ __metadata:
     jest-environment-jsdom: "npm:^29.4.1"
     jest-preset-angular: "npm:^14.0.0"
     morgan: "npm:^1.10.0"
-    ngx-isr: "npm:^0.6.0"
     node-fetch: "npm:^2.7.0"
     nx: "npm:16.7.4"
     prettier: "npm:^2.6.2"
@@ -7734,7 +7708,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-glob@npm:^3.2.11, fast-glob@npm:^3.2.12, fast-glob@npm:^3.2.5, fast-glob@npm:^3.2.7, fast-glob@npm:^3.2.9, fast-glob@npm:^3.3.0":
+"fast-glob@npm:^3.2.11, fast-glob@npm:^3.2.12, fast-glob@npm:^3.2.7, fast-glob@npm:^3.2.9, fast-glob@npm:^3.3.0":
   version: 3.3.2
   resolution: "fast-glob@npm:3.3.2"
   dependencies:
@@ -10069,13 +10043,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsonc-parser@npm:3.0.0":
-  version: 3.0.0
-  resolution: "jsonc-parser@npm:3.0.0"
-  checksum: 373632ab71f773ce6081dd70297c40fbb05aacde07ab8a5852c78c0a13d1fadb7ad886202e87bfc0168dd78568cda2d4eb36e785dac330f93e5e772d7a67f33f
-  languageName: node
-  linkType: hard
-
 "jsonc-parser@npm:3.2.0":
   version: 3.2.0
   resolution: "jsonc-parser@npm:3.2.0"
@@ -10930,19 +10897,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"multimatch@npm:5.0.0":
-  version: 5.0.0
-  resolution: "multimatch@npm:5.0.0"
-  dependencies:
-    "@types/minimatch": "npm:^3.0.3"
-    array-differ: "npm:^3.0.0"
-    array-union: "npm:^2.1.0"
-    arrify: "npm:^2.0.1"
-    minimatch: "npm:^3.0.4"
-  checksum: 252ffae6d19491c169c22fc30cf8a99f6031f94a3495f187d3430b06200e9f05a7efae90ab9d834f090834e0d9c979ab55e7ad21f61a37995d807b4b0ccdcbd1
-  languageName: node
-  linkType: hard
-
 "mute-stream@npm:0.0.8":
   version: 0.0.8
   resolution: "mute-stream@npm:0.0.8"
@@ -10996,35 +10950,6 @@ __metadata:
   version: 2.6.2
   resolution: "neo-async@npm:2.6.2"
   checksum: c2f5a604a54a8ec5438a342e1f356dff4bc33ccccdb6dc668d94fe8e5eccfc9d2c2eea6064b0967a767ba63b33763f51ccf2cd2441b461a7322656c1f06b3f5d
-  languageName: node
-  linkType: hard
-
-"ng-morph@npm:^2.1.3":
-  version: 2.2.5
-  resolution: "ng-morph@npm:2.2.5"
-  dependencies:
-    jsonc-parser: "npm:3.0.0"
-    minimatch: "npm:3.0.5"
-    multimatch: "npm:5.0.0"
-    ts-morph: "npm:10.0.2"
-  peerDependencies:
-    "@angular-devkit/core": ">=11.0.0"
-    "@angular-devkit/schematics": ">=11.0.0"
-  checksum: 1e3d7ea8b144f299b47ffb0214bc05ba0d0838ad1ea68409e58428ba9540ed9c34b42945f8a3602158acaa6d2dcd34c94c97855097b19337b1f0abbecc902bd2
-  languageName: node
-  linkType: hard
-
-"ngx-isr@npm:^0.6.0":
-  version: 0.6.0
-  resolution: "ngx-isr@npm:0.6.0"
-  dependencies:
-    ng-morph: "npm:^2.1.3"
-    tslib: "npm:^2.3.0"
-  peerDependencies:
-    "@angular/common": ">=15.0.0 || >=16.0.0"
-    "@angular/core": ">=15.0.0 || >=16.0.0"
-    "@types/node": ^14.15.0 || ^16.0.0 || ^18.0.0
-  checksum: 70003e50c888a750f74859aa9ba8ffc62a3b2aadfe74384549fe6b039e0a4fbeabc6f9151ecb4eb7bdef7bcd0c2e4332e7c15162a8db92eba3efad6b5fda1dce
   languageName: node
   linkType: hard
 
@@ -11758,13 +11683,6 @@ __metadata:
   version: 1.3.3
   resolution: "parseurl@npm:1.3.3"
   checksum: 90dd4760d6f6174adb9f20cf0965ae12e23879b5f5464f38e92fce8073354341e4b3b76fa3d878351efe7d01e617121955284cfd002ab087fba1a0726ec0b4f5
-  languageName: node
-  linkType: hard
-
-"path-browserify@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "path-browserify@npm:1.0.1"
-  checksum: 8b8c3fd5c66bd340272180590ae4ff139769e9ab79522e2eb82e3d571a89b8117c04147f65ad066dccfb42fcad902e5b7d794b3d35e0fd840491a8ddbedf8c66
   languageName: node
   linkType: hard
 
@@ -14189,16 +14107,6 @@ __metadata:
     typescript: "*"
     webpack: ^5.0.0
   checksum: 7dc1e3e5d3d032b6ef27836032f02c57077dfbcdf5817cbbc16b7b8609e7ed1d0ec157a03eaac07960161d8ad4a9e030c4d6722fe33540cf6ee75156c7f9c33d
-  languageName: node
-  linkType: hard
-
-"ts-morph@npm:10.0.2":
-  version: 10.0.2
-  resolution: "ts-morph@npm:10.0.2"
-  dependencies:
-    "@ts-morph/common": "npm:~0.9.0"
-    code-block-writer: "npm:^10.1.1"
-  checksum: 152d1adf0dcfa6a51c91290f57c523c1261655dff0d86e0cbcc6765ba5c5278d7fb7400e0edbc0b1aba448e7392f412cfc2098bad1d73886a03b97210eb02025
   languageName: node
   linkType: hard
 

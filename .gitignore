@@ -54,3 +54,6 @@ Thumbs.db
 .pnp.*
 yarn-error.log
 .angular
+
+#nx
+.nx/cache

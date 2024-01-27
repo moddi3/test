@@ -5,7 +5,7 @@ import * as express from 'express';
 import { existsSync } from 'fs';
 import { join } from 'path';
 
-import { FileSystemCacheHandler, ISRHandler } from 'ngx-isr';
+import { ISRHandler } from '@rx-angular/isr';
 import { RedisCacheHandler } from './redis-chache-handler';
 import bootstrap from './src/main.server';
 

@@ -12,4 +12,9 @@ export const appRoutes: Route[] = [
     component: ExampleComponent,
     data: { revalidate: 100 },
   },
+  {
+    path: 'manual-revalidation',
+    component: ExampleComponent,
+    data: { revalidate: 0 },
+  },
 ];
