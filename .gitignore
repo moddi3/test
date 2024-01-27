@@ -42,3 +42,15 @@ Thumbs.db
 
 # Local Netlify folder
 .netlify
+
+
+# yarn
+/.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
+yarn-error.log
+.angular
