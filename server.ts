@@ -18,18 +18,18 @@ export function app(): express.Express {
     : 'index';
 
 
-  const REDIS_CONNECTION_STRING =
-    'redis://default:d3f78605c76a4d3aaf7cdd1b0b494b44@eu2-pro-elf-32120.upstash.io:32120';
-  const redisCacheHandler = REDIS_CONNECTION_STRING
-    ? new RedisCacheHandler({ connectionString: REDIS_CONNECTION_STRING, })
-    : undefined;
+  // const REDIS_CONNECTION_STRING =
+  //   'redis://default:d3f78605c76a4d3aaf7cdd1b0b494b44@eu2-pro-elf-32120.upstash.io:32120';
+  // const redisCacheHandler = REDIS_CONNECTION_STRING
+  //   ? new RedisCacheHandler({ connectionString: REDIS_CONNECTION_STRING, })
+  //   : undefined;
 
   const isr = new ISRHandler({
-    cache: redisCacheHandler,
+    // cache: redisCacheHandler,
     indexHtml,
     invalidateSecretToken: '123', // replace with env secret key ex. process.env.REVALIDATE_SECRET_TOKEN
     enableLogging: true,
-    // buildId: '123',
+    buildId: Date.now().toString(),
   });
   // Our Universal express-engine (found @ https://github.com/angular/universal/tree/main/modules/express-engine)
   server.engine(
@@ -82,10 +82,10 @@ export function app(): express.Express {
         console.log('URL', req.originalUrl);
 
         console.log('default cache');
-        RedisCacheHandler.prefix = req.hostname + req.originalUrl;
+        // RedisCacheHandler.prefix = req.hostname + req.originalUrl;
         return await isr.render(req, res, next, {
           modifyGeneratedHtml: (req, html) => {
-            return `${html}<!-- Hello, I'm modifying the generatedHtml before caching it! -->`;
+            return `${html}<!-- Hello, I'm modifying the generatedHtml before caching it! ID: ${req.hostname + req.originalUrl}-->`;
           },
         });
       }

@@ -1,5 +1,5 @@
-import { CacheHandler, ISROptions, CacheData } from '@rx-angular/isr';
 import Redis from 'ioredis';
+import { CacheHandler, ISROptions, CacheData } from '@rx-angular/isr';
 
 type RedisCacheHandlerOptions = {
   /**
