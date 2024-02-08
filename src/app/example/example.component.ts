@@ -8,7 +8,7 @@ import {
   signal,
   TransferState,
 } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { CommonModule, isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
@@ -38,18 +38,19 @@ export class ExampleComponent implements OnInit {
 
     this.http
       // .get('https://cat-fact.herokuapp.com/facts')
-      .get('https://api.fisenko.net/v1/quotes/en')
+      // .get('https://api.fisenko.net/v1/quotes/en')
+      .get('https://api.quotable.io/random')
       .subscribe((res: any) => {
         console.log('making request');
-        console.log('res length', res.length);
-        const factNumber = Math.floor(Math.random() * res.length);
-        console.log('factNumber', factNumber);
-        this.transferState.set(this.catImageStateKey, res[factNumber].text);
+        console.log('response', res);
+        console.log('qouteAuthor', res.author);
+        this.transferState.set(this.catImageStateKey, res.content);
         this.transferState.set(this.timeStateKey, new Date().toString());
       });
   }
 
   invalidate() {
+    // if (isPlatformServer(this.platformId)) return
     this.http
       .post('/api/invalidate', {
         token: '123',

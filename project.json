@@ -7,17 +7,22 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser-esbuild",
+      "executor": "@angular-devkit/build-angular:application",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/contstructor-with-isr/browser",
+        "outputPath": "dist/contstructor-with-isr",
         "index": "./src/index.html",
-        "main": "./src/main.ts",
+        "browser": "./src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "./tsconfig.app.json",
+        "inlineStyleLanguage": "less",
         "assets": ["./src/favicon.ico", "./src/assets"],
         "styles": ["./src/styles.less"],
-        "scripts": []
+        "scripts": [],
+        "server": "./src/main.server.ts",
+        "ssr": {
+          "entry": "./server.ts"
+        }
       },
       "configurations": {
         "production": {
@@ -36,12 +41,11 @@
           "outputHashing": "all"
         },
         "development": {
-          "buildOptimizer": false,
           "optimization": false,
-          "vendorChunk": true,
           "extractLicenses": false,
           "sourceMap": true,
-          "namedChunks": true
+          "verbose": true,
+          "namedChunks": false
         }
       },
       "defaultConfiguration": "production"
@@ -50,93 +54,13 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "contstructor-with-isr:build:production"
+          "buildTarget": "contstructor-with-isr:build:production"
         },
         "development": {
-          "browserTarget": "contstructor-with-isr:build:development"
+          "buildTarget": "contstructor-with-isr:build:development"
         }
       },
       "defaultConfiguration": "development"
-    },
-    "extract-i18n": {
-      "executor": "@angular-devkit/build-angular:extract-i18n",
-      "options": {
-        "browserTarget": "contstructor-with-isr:build"
-      }
-    },
-    "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["./src/**/*.ts", "./src/**/*.html"]
-      }
-    },
-    "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectName}"],
-      "options": {
-        "jestConfig": "jest.config.ts",
-        "passWithNoTests": true
-      },
-      "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
-        }
-      }
-    },
-    "server": {
-      "dependsOn": ["build"],
-      "executor": "@angular-devkit/build-angular:server",
-      "options": {
-        "outputPath": "dist/contstructor-with-isr/server",
-        "main": "server.ts",
-        "tsConfig": "tsconfig.server.json"
-      },
-      "configurations": {
-        "production": {
-          "outputHashing": "media"
-        },
-        "development": {
-          "buildOptimizer": false,
-          "optimization": false,
-          "sourceMap": true,
-          "extractLicenses": false,
-          "vendorChunk": true
-        }
-      },
-      "defaultConfiguration": "production"
-    },
-    "serve-ssr": {
-      "executor": "@nguniversal/builders:ssr-dev-server",
-      "configurations": {
-        "development": {
-          "browserTarget": "contstructor-with-isr:build:development",
-          "serverTarget": "contstructor-with-isr:server:development"
-        },
-        "production": {
-          "browserTarget": "contstructor-with-isr:build:production",
-          "serverTarget": "contstructor-with-isr:server:production"
-        }
-      },
-      "defaultConfiguration": "development"
-    },
-    "prerender": {
-      "executor": "@nguniversal/builders:prerender",
-      "options": {
-        "routes": ["/"]
-      },
-      "configurations": {
-        "development": {
-          "browserTarget": "contstructor-with-isr:build:development",
-          "serverTarget": "contstructor-with-isr:server:development"
-        },
-        "production": {
-          "browserTarget": "contstructor-with-isr:build:production",
-          "serverTarget": "contstructor-with-isr:server:production"
-        }
-      },
-      "defaultConfiguration": "production"
     }
   }
 }
