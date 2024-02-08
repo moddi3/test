@@ -1,11 +1,13 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2,
   "public": true,
   "name": "contstructor-with-isr",
   "rewrites": [{ "source": "/(.*)", "destination": "/api" }],
   "functions": {
     "api/index.mjs": {
-      "includeFiles": "dist/contstructor-with-isr/browser/**"
+      "includeFiles": "dist/contstructor-with-isr/*/**"
+
     }
   }
 }
