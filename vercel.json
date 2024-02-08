@@ -4,7 +4,7 @@
   "name": "contstructor-with-isr",
   "rewrites": [{ "source": "/(.*)", "destination": "/api" }],
   "functions": {
-    "api/index.js": {
+    "api/index.mjs": {
       "includeFiles": "dist/contstructor-with-isr/browser/**"
     }
   }
