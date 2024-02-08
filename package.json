@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "nx run contstructor-with-isr:serve:dev",
-    "build": "nx run contstructor-with-isr:build",
+    "build": "nx run contstructor-with-isr:build && ls -la dist && ls -la dist/contstructor-with-isr/browser && ls -la dist/contstructor-with-isr/server",
     "watch": "nx run contstructor-with-isr:build:development --watch",
     "serve:ssr": "node dist/contstructor-with-isr/server/server.mjs"
   },
